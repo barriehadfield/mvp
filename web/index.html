@@ -60,13 +60,13 @@
           engineInitializer.initializeEngine({
             multiViewEnabled: true,
           }).then(function(appRunner) {
+
+            var component1 = { greeting: 'Everything on the left', };
+            var component2 = { greeting: 'Everything on the right', };
+
             appRunner.runApp().then(function(flutterApp) {
-              flutterApp.addView({hostElement: document.querySelector("#left"),  initialData: {
-    greeting: 'Everything on the left',
-  },});
-              flutterApp.addView({hostElement: document.querySelector("#right"),  initialData: {
-    greeting: 'Right is to fight',
-  },});
+              flutterApp.addView({hostElement: document.querySelector("#left"),  initialData: component1,});
+              flutterApp.addView({hostElement: document.querySelector("#right"),  initialData: component2,});
             });
           });
         }
