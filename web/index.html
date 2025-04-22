@@ -42,9 +42,9 @@
 </head>
 <body>
   <div style="width: 100%; height: 100%; position: absolute;">
-    <div id="square" style="width: 50%; height: 100%; float: left;"></div>
-    <!-- <div id="swap" style="width: 50%; height: 100%; float: left;"></div> -->
-    <div id="circle" style="width: 50%; height: 100%; float: left;"></div>
+    <div id="square" style="width: 33.33%; height: 100%; float: left;"></div>
+    <div id="swap" style="width: 33.33%; height: 100%; float: left;"></div>
+    <div id="circle" style="width: 33.33%; height: 100%; float: left;"></div>
   </div>
   <script>
     window.addEventListener('load', function(ev) {
@@ -58,12 +58,14 @@
             multiViewEnabled: true,
           }).then(function(appRunner) {
 
-            var component1 = { component: 'square', };
-            var component2 = { component: 'circle', };
+            var square = { component: 'square', };
+            var swap = { component: 'swap', };
+            var circle = { component: 'circle', };
 
             appRunner.runApp().then(function(flutterApp) {
-              flutterApp.addView({hostElement: document.querySelector("#square"),  initialData: component1,});
-              flutterApp.addView({hostElement: document.querySelector("#circle"),  initialData: component2,});
+              flutterApp.addView({hostElement: document.querySelector("#square"),  initialData: square,});
+              flutterApp.addView({hostElement: document.querySelector("#swap"),  initialData: swap,});
+              flutterApp.addView({hostElement: document.querySelector("#circle"),  initialData: circle,});
             });
           });
         }
