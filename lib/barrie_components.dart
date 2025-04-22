@@ -33,10 +33,7 @@ class WidgetChooserApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.ltr,
-      child: _viewSelector(context),
-    );
+    return _viewSelector(context);
   }
 
   Widget _viewSelector(BuildContext context) {
@@ -46,6 +43,7 @@ class WidgetChooserApp extends StatelessWidget {
     final InitialData initialData =
         ui_web.views.getInitialData(view.viewId)! as InitialData;
 
+    // would be better as an enum of components we support
     return switch (initialData.component) {
       'square' => _square(context, initialData),
       'circle' => _circle(context, initialData),
