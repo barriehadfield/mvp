@@ -61,8 +61,8 @@
             multiViewEnabled: true,
           }).then(function(appRunner) {
 
-            var component1 = { greeting: 'Left left', };
-            var component2 = { greeting: 'Right on the right', };
+            var component1 = { component: 'square', };
+            var component2 = { component: 'circle', };
 
             appRunner.runApp().then(function(flutterApp) {
               flutterApp.addView({hostElement: document.querySelector("#left"),  initialData: component1,});
